@@ -12,6 +12,8 @@ int main(int argc, char *argv[])
     menu w;
     w.show();
     cout<<"bien";
+    cout<<"asdfasdf";
+    cout<<"asdfasdf";
     return a.exec();
 
 }
