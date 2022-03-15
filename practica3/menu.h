@@ -17,5 +17,8 @@ public:
 
 private:
     Ui::menu *ui;
+    int Ana;
+
+
 };
 #endif // MENU_H
