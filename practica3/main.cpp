@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     menu w;
     w.show();
-    cout<<"hola que tal";
+    cout<<"bien";
     return a.exec();
 
 }
