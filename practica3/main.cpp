@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     w.show();
     cout<<"bien";
     cout<<"asdfasdf";
-    cout<<"asdfasdf mi nombre es GERARDO OLA K TAL CALLATE :)";
+    cout<<"asdfasdf mi nombre es GERARDO OLA K TAL CALLATE :) POR FABOR BORRAD HESTO GRAZIAS";
     return a.exec();
 
 }
