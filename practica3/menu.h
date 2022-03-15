@@ -17,7 +17,7 @@ public:
 
 private:
     Ui::menu *ui;
-    int Ana;
+    int Anaaaaaa;
 
 
 };
