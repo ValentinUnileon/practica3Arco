@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>395</width>
-    <height>484</height>
+    <height>500</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -223,6 +223,19 @@ ORDENACION POR BURBUJA</string>
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
+   <widget class="QLabel" name="resultado">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>440</y>
+      <width>311</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -230,7 +243,7 @@ ORDENACION POR BURBUJA</string>
      <x>0</x>
      <y>0</y>
      <width>395</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

@@ -43,6 +43,7 @@ public:
     QPushButton *botonVolver;
     QLabel *labelTitulo;
     QFrame *linea1;
+    QLabel *resultado;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -50,7 +51,7 @@ public:
     {
         if (ventanaOrdenacion->objectName().isEmpty())
             ventanaOrdenacion->setObjectName(QString::fromUtf8("ventanaOrdenacion"));
-        ventanaOrdenacion->resize(395, 484);
+        ventanaOrdenacion->resize(395, 500);
         centralwidget = new QWidget(ventanaOrdenacion);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         boxTiempo1 = new QTextBrowser(centralwidget);
@@ -109,10 +110,13 @@ public:
         linea1->setGeometry(QRect(40, 80, 211, 16));
         linea1->setFrameShape(QFrame::HLine);
         linea1->setFrameShadow(QFrame::Sunken);
+        resultado = new QLabel(centralwidget);
+        resultado->setObjectName(QString::fromUtf8("resultado"));
+        resultado->setGeometry(QRect(30, 440, 311, 31));
         ventanaOrdenacion->setCentralWidget(centralwidget);
         menubar = new QMenuBar(ventanaOrdenacion);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 395, 22));
+        menubar->setGeometry(QRect(0, 0, 395, 21));
         ventanaOrdenacion->setMenuBar(menubar);
         statusbar = new QStatusBar(ventanaOrdenacion);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -137,6 +141,7 @@ public:
         botonVolver->setText(QCoreApplication::translate("ventanaOrdenacion", "Volver", nullptr));
         labelTitulo->setText(QCoreApplication::translate("ventanaOrdenacion", "ALGORITMO 1: \n"
 "ORDENACION POR BURBUJA", nullptr));
+        resultado->setText(QCoreApplication::translate("ventanaOrdenacion", "TextLabel", nullptr));
     } // retranslateUi
 
 };

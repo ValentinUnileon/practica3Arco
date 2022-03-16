@@ -3,6 +3,8 @@
 #include "menu.h"
 #include <chrono>
 #include <string>
+#include <iostream>
+#define length(x) (sizeof(x)/sizeof(x[0]))
 
 ventanaOrdenacion::ventanaOrdenacion(QWidget *parent) :
     QMainWindow(parent),
@@ -31,6 +33,8 @@ void ventanaOrdenacion::on_botonEjecutar_clicked()
     int i;
     float total;
 
+    //introducir datos
+
 
     //INICIO DEL BUCLE DE EJECUCIONES
 
@@ -39,6 +43,43 @@ void ventanaOrdenacion::on_botonEjecutar_clicked()
         auto comienzo = std::chrono::high_resolution_clock::now();
 
         //-------------------------------------------------
+
+        int v[]={3, 34, 1, 53, 15, 6};  //ejemplo de numeros a ordenar
+        int auxiliar;
+
+
+        // Ordenación
+        for(int i=0; i<(int)length(v)-1; i++){
+
+
+            // Comparaciones
+            for(int j=0; j<((int)length(v)-1)-i; j++){
+            // Intercambiar los elementos
+            if(v[j] > v[j+1]){
+                auxiliar=v[j];
+                v[j]=v[j+1];
+                v[j+1]=auxiliar;
+                }
+            }
+
+        }
+
+         QString resultado;
+
+
+        for(int i=0; i<(int)length(v); i++){
+
+
+               resultado.append(QString::number(v[i]));
+               resultado.append(" ");
+
+
+        }
+
+        ui->resultado->setText(resultado);
+
+
+
 
 
 
