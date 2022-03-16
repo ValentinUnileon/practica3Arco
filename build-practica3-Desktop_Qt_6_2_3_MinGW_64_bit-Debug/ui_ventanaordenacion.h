@@ -50,7 +50,7 @@ public:
     {
         if (ventanaOrdenacion->objectName().isEmpty())
             ventanaOrdenacion->setObjectName(QString::fromUtf8("ventanaOrdenacion"));
-        ventanaOrdenacion->resize(395, 505);
+        ventanaOrdenacion->resize(395, 484);
         centralwidget = new QWidget(ventanaOrdenacion);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         boxTiempo1 = new QTextBrowser(centralwidget);

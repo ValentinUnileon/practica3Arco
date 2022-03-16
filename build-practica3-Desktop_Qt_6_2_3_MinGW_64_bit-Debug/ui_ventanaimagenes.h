@@ -51,7 +51,7 @@ public:
     {
         if (ventanaImagenes->objectName().isEmpty())
             ventanaImagenes->setObjectName(QString::fromUtf8("ventanaImagenes"));
-        ventanaImagenes->resize(409, 497);
+        ventanaImagenes->resize(409, 478);
         centralwidget = new QWidget(ventanaImagenes);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         boxMedia = new QTextBrowser(centralwidget);

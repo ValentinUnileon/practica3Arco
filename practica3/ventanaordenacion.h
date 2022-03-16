@@ -18,6 +18,10 @@ public:
 private slots:
     void on_botonVolver_clicked();
 
+    void on_botonEjecutar_clicked();
+
+    void on_botonResetear_clicked();
+
 private:
     Ui::ventanaOrdenacion *ui;
 };

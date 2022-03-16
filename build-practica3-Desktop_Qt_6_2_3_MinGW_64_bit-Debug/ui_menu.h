@@ -35,7 +35,7 @@ public:
     {
         if (menu->objectName().isEmpty())
             menu->setObjectName(QString::fromUtf8("menu"));
-        menu->resize(502, 245);
+        menu->resize(502, 236);
         centralwidget = new QWidget(menu);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         botonOrdenacion = new QPushButton(centralwidget);
@@ -46,9 +46,9 @@ public:
         botonImagen->setGeometry(QRect(280, 40, 151, 51));
         label1 = new QLabel(centralwidget);
         label1->setObjectName(QString::fromUtf8("label1"));
-        label1->setGeometry(QRect(160, 100, 181, 20));
+        label1->setGeometry(QRect(140, 100, 211, 20));
         QFont font;
-        font.setPointSize(10);
+        font.setPointSize(12);
         label1->setFont(font);
         botonCerrar = new QPushButton(centralwidget);
         botonCerrar->setObjectName(QString::fromUtf8("botonCerrar"));
