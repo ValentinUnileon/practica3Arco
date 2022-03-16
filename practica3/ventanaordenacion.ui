@@ -236,6 +236,20 @@ ORDENACION POR BURBUJA</string>
      <string>TextLabel</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="botonDirectorio">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>100</y>
+      <width>111</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Seleccionar 
+ directorio</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -243,7 +257,7 @@ ORDENACION POR BURBUJA</string>
      <x>0</x>
      <y>0</y>
      <width>395</width>
-     <height>21</height>
+     <height>17</height>
     </rect>
    </property>
   </widget>

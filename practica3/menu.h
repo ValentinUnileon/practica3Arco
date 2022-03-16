@@ -26,7 +26,6 @@ private slots:
 
 private:
     Ui::menu *ui;
-    int Anaaaaaa;
 
 
 };

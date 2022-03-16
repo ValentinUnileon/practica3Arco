@@ -44,6 +44,7 @@ public:
     QLabel *labelTitulo;
     QFrame *linea1;
     QLabel *resultado;
+    QPushButton *botonDirectorio;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -113,10 +114,13 @@ public:
         resultado = new QLabel(centralwidget);
         resultado->setObjectName(QString::fromUtf8("resultado"));
         resultado->setGeometry(QRect(30, 440, 311, 31));
+        botonDirectorio = new QPushButton(centralwidget);
+        botonDirectorio->setObjectName(QString::fromUtf8("botonDirectorio"));
+        botonDirectorio->setGeometry(QRect(270, 100, 111, 61));
         ventanaOrdenacion->setCentralWidget(centralwidget);
         menubar = new QMenuBar(ventanaOrdenacion);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 395, 21));
+        menubar->setGeometry(QRect(0, 0, 395, 17));
         ventanaOrdenacion->setMenuBar(menubar);
         statusbar = new QStatusBar(ventanaOrdenacion);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -142,6 +146,8 @@ public:
         labelTitulo->setText(QCoreApplication::translate("ventanaOrdenacion", "ALGORITMO 1: \n"
 "ORDENACION POR BURBUJA", nullptr));
         resultado->setText(QCoreApplication::translate("ventanaOrdenacion", "TextLabel", nullptr));
+        botonDirectorio->setText(QCoreApplication::translate("ventanaOrdenacion", "Seleccionar \n"
+" directorio", nullptr));
     } // retranslateUi
 
 };

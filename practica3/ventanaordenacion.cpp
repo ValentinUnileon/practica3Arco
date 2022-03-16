@@ -30,7 +30,7 @@ void ventanaOrdenacion::on_botonVolver_clicked()
 
 void ventanaOrdenacion::on_botonEjecutar_clicked()
 {
-    int i;
+    int i,j,suma;
     float total;
 
     //introducir datos
@@ -77,8 +77,6 @@ void ventanaOrdenacion::on_botonEjecutar_clicked()
         }
 
         ui->resultado->setText(resultado);
-
-
 
 
 
