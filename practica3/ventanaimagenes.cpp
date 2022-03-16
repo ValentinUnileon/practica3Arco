@@ -1,5 +1,6 @@
 #include "ventanaimagenes.h"
 #include "ui_ventanaimagenes.h"
+#include "menu.h"
 
 ventanaImagenes::ventanaImagenes(QWidget *parent) :
     QMainWindow(parent),
@@ -12,3 +13,13 @@ ventanaImagenes::~ventanaImagenes()
 {
     delete ui;
 }
+
+void ventanaImagenes::on_botonVolver_clicked()
+{
+    menu *m = new menu();
+
+    m->show();
+
+    this->close();
+}
+

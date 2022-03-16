@@ -7,18 +7,18 @@
     <x>0</x>
     <y>0</y>
     <width>502</width>
-    <height>198</height>
+    <height>236</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>menu</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="botonOrdenacion">
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>30</y>
+      <y>40</y>
       <width>151</width>
       <height>51</height>
      </rect>
@@ -27,11 +27,11 @@
      <string>Ordenación por burbuja</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="botonImagen">
     <property name="geometry">
      <rect>
       <x>280</x>
-      <y>30</y>
+      <y>40</y>
       <width>151</width>
       <height>51</height>
      </rect>
@@ -40,17 +40,35 @@
      <string>Imagen a blanco y negro</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="label1">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>110</y>
-      <width>161</width>
+      <x>140</x>
+      <y>100</y>
+      <width>211</width>
       <height>20</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
     <property name="text">
-     <string>Selecciona un algoritmo.</string>
+     <string>SELECCIONA UN ALGORITMO</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="botonCerrar">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>160</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Cerrar aplicacion</string>
     </property>
    </widget>
   </widget>

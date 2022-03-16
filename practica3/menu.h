@@ -15,6 +15,15 @@ public:
     menu(QWidget *parent = nullptr);
     ~menu();
 
+private slots:
+
+
+    void on_botonOrdenacion_clicked();
+
+    void on_botonImagen_clicked();
+
+    void on_botonCerrar_clicked();
+
 private:
     Ui::menu *ui;
     int Anaaaaaa;

@@ -15,6 +15,9 @@ public:
     explicit ventanaImagenes(QWidget *parent = nullptr);
     ~ventanaImagenes();
 
+private slots:
+    void on_botonVolver_clicked();
+
 private:
     Ui::ventanaImagenes *ui;
 };

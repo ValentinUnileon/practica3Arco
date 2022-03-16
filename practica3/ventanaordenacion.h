@@ -15,6 +15,9 @@ public:
     explicit ventanaOrdenacion(QWidget *parent = nullptr);
     ~ventanaOrdenacion();
 
+private slots:
+    void on_botonVolver_clicked();
+
 private:
     Ui::ventanaOrdenacion *ui;
 };
