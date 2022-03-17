@@ -44,6 +44,8 @@ public:
     QLabel *labelTiempo5;
     QLabel *labelTitulo;
     QFrame *linea1;
+    QPushButton *abrir;
+    QLabel *labelPic;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -51,7 +53,7 @@ public:
     {
         if (ventanaImagenes->objectName().isEmpty())
             ventanaImagenes->setObjectName(QString::fromUtf8("ventanaImagenes"));
-        ventanaImagenes->resize(409, 478);
+        ventanaImagenes->resize(623, 478);
         centralwidget = new QWidget(ventanaImagenes);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         boxMedia = new QTextBrowser(centralwidget);
@@ -113,10 +115,16 @@ public:
         linea1->setGeometry(QRect(30, 80, 211, 16));
         linea1->setFrameShape(QFrame::HLine);
         linea1->setFrameShadow(QFrame::Sunken);
+        abrir = new QPushButton(centralwidget);
+        abrir->setObjectName(QString::fromUtf8("abrir"));
+        abrir->setGeometry(QRect(270, 170, 80, 18));
+        labelPic = new QLabel(centralwidget);
+        labelPic->setObjectName(QString::fromUtf8("labelPic"));
+        labelPic->setGeometry(QRect(270, 210, 161, 151));
         ventanaImagenes->setCentralWidget(centralwidget);
         menubar = new QMenuBar(ventanaImagenes);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 409, 22));
+        menubar->setGeometry(QRect(0, 0, 623, 17));
         ventanaImagenes->setMenuBar(menubar);
         statusbar = new QStatusBar(ventanaImagenes);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -143,6 +151,8 @@ public:
         labelTiempo5->setText(QCoreApplication::translate("ventanaImagenes", "Tiempo 5:", nullptr));
         labelTitulo->setText(QCoreApplication::translate("ventanaImagenes", "ALGORITMO 2: \n"
 "IMAGENES A BLANCO Y NEGRO", nullptr));
+        abrir->setText(QCoreApplication::translate("ventanaImagenes", "Abrir", nullptr));
+        labelPic->setText(QString());
     } // retranslateUi
 
 };

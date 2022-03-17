@@ -2,6 +2,14 @@
 #define VENTANAIMAGENES_H
 
 #include <QMainWindow>
+///Imagenes
+#include <QImage>
+#include <QPixmap>
+#include <QFileDialog>
+#include <QMessageBox>
+#include <QScreen>
+#include <QGuiApplication>
+/////////
 
 namespace Ui {
 class ventanaImagenes;
@@ -22,8 +30,17 @@ private slots:
 
     void on_botonResetear_clicked();
 
+
+
+    void on_abrir_clicked();
+
 private:
     Ui::ventanaImagenes *ui;
+
+    //Guardar ruta
+QString runPath;
+QString hglpName;
+QString hglpPath;
 };
 
 #endif // VENTANAIMAGENES_H
