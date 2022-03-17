@@ -1,5 +1,7 @@
 #ifndef VENTANAIMAGENES_H
 #define VENTANAIMAGENES_H
+using namespace std;
+
 
 #include <QMainWindow>
 ///Imagenes
@@ -10,6 +12,10 @@
 #include <QScreen>
 #include <QGuiApplication>
 /////////
+///
+#include <QImage>
+#include <QColor>
+#include <QPixmap>
 
 namespace Ui {
 class ventanaImagenes;
@@ -22,6 +28,13 @@ class ventanaImagenes : public QMainWindow
 public:
     explicit ventanaImagenes(QWidget *parent = nullptr);
     ~ventanaImagenes();
+    /////
+        ventanaImagenes(QString imgPath);
+
+        QImage* grayScaleImg();
+        int Otsu(QImage* img);
+        QImage* process(QImage* img);
+        int     threshold;
 
 private slots:
     void on_botonVolver_clicked();
@@ -31,10 +44,11 @@ private slots:
     void on_botonResetear_clicked();
 
 
-
-    void on_abrir_clicked();
-
 private:
+    QImage* _img;
+
+    vector<int> Histogram(QImage* img);
+
     Ui::ventanaImagenes *ui;
 
     //Guardar ruta

@@ -9,6 +9,11 @@
 
 using namespace std;
 
+#include <opencv2/opencv.hpp>
+
+using namespace cv;
+
+
 
 
 ventanaImagenes::ventanaImagenes(QWidget *parent) :
@@ -17,7 +22,6 @@ ventanaImagenes::ventanaImagenes(QWidget *parent) :
 {
     ui->setupUi(this);
 
-/////
 
 }
 
@@ -116,16 +120,4 @@ void ventanaImagenes::on_botonResetear_clicked()
 }
 
 
-
-//El método no puede ir entre los medidores de tiempo, aún no está en blanco y negro y solo se
-//puede abrir la imagen de la ruta
-
-void ventanaImagenes::on_abrir_clicked()
-{
-    int w=ui->labelPic->width(); //Saca el ancho y largo de la etiqueta
-    int h=ui->labelPic->height();
-
-    QPixmap pix("C:/Users/anaza/Desktop/.ImagenLorito/rosella.jpg"); //localizacion de la imagen y seleccion de la imafen
-    ui->labelPic->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));//la imprime
-}
 

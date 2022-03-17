@@ -24,6 +24,14 @@ FORMS += \
     ventanaimagenes.ui \
     ventanaordenacion.ui
 
+
+INCLUDEPATH += "C:\opencv\build\include"
+LIBS += -L"C:\opencv\build\x64\vc12\lib" \
+    -lopencv_ts300 \
+    -lopencv_world300 \
+
+
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin

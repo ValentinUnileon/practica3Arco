@@ -46,6 +46,7 @@ public:
     QFrame *linea1;
     QPushButton *abrir;
     QLabel *labelPic;
+    QLabel *labelImagen;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -121,6 +122,9 @@ public:
         labelPic = new QLabel(centralwidget);
         labelPic->setObjectName(QString::fromUtf8("labelPic"));
         labelPic->setGeometry(QRect(270, 210, 161, 151));
+        labelImagen = new QLabel(centralwidget);
+        labelImagen->setObjectName(QString::fromUtf8("labelImagen"));
+        labelImagen->setGeometry(QRect(370, 20, 161, 151));
         ventanaImagenes->setCentralWidget(centralwidget);
         menubar = new QMenuBar(ventanaImagenes);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -153,6 +157,7 @@ public:
 "IMAGENES A BLANCO Y NEGRO", nullptr));
         abrir->setText(QCoreApplication::translate("ventanaImagenes", "Abrir", nullptr));
         labelPic->setText(QString());
+        labelImagen->setText(QString());
     } // retranslateUi
 
 };

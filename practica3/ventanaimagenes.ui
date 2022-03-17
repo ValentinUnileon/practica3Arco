@@ -263,6 +263,19 @@ IMAGENES A BLANCO Y NEGRO</string>
      <string/>
     </property>
    </widget>
+   <widget class="QLabel" name="labelImagen">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>20</y>
+      <width>161</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
