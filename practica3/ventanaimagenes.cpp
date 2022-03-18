@@ -127,11 +127,18 @@ void ventanaImagenes::on_botonDirectorio_clicked()
 {
 
     QString homeDir=QDir::homePath ();
-    this->direccionFichero = QFileDialog::getOpenFileName(this, tr("Abrir archivo"), homeDir);
+    this->direccionFicheroEntrada = QFileDialog::getOpenFileName(this, tr("Seleccionar archivo"), homeDir);
 
-    std::ifstream fichero;
+    QMessageBox::information(this, tr("Nombre"), direccionFicheroEntrada);
 
-    fichero.open("hello.txt");
+}
 
+
+void ventanaImagenes::on_botonDirectorio_2_clicked()
+{
+    QString homeDir=QDir::homePath ();
+    this->direccionFicheroSalida = QFileDialog::getExistingDirectory(this, tr("Seleccionar dinerctorio"), homeDir);
+
+    QMessageBox::information(this, tr("Carpeta"), direccionFicheroSalida);
 }
 

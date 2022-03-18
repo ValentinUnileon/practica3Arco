@@ -47,6 +47,7 @@ public:
     QPushButton *abrir;
     QLabel *labelPic;
     QLabel *labelImagen;
+    QPushButton *botonDirectorio_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -118,17 +119,20 @@ public:
         linea1->setFrameShadow(QFrame::Sunken);
         abrir = new QPushButton(centralwidget);
         abrir->setObjectName(QString::fromUtf8("abrir"));
-        abrir->setGeometry(QRect(270, 170, 80, 18));
+        abrir->setGeometry(QRect(400, 140, 80, 18));
         labelPic = new QLabel(centralwidget);
         labelPic->setObjectName(QString::fromUtf8("labelPic"));
-        labelPic->setGeometry(QRect(270, 210, 161, 151));
+        labelPic->setGeometry(QRect(380, 210, 161, 151));
         labelImagen = new QLabel(centralwidget);
         labelImagen->setObjectName(QString::fromUtf8("labelImagen"));
         labelImagen->setGeometry(QRect(370, 20, 161, 151));
+        botonDirectorio_2 = new QPushButton(centralwidget);
+        botonDirectorio_2->setObjectName(QString::fromUtf8("botonDirectorio_2"));
+        botonDirectorio_2->setGeometry(QRect(250, 180, 111, 61));
         ventanaImagenes->setCentralWidget(centralwidget);
         menubar = new QMenuBar(ventanaImagenes);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 623, 17));
+        menubar->setGeometry(QRect(0, 0, 623, 21));
         ventanaImagenes->setMenuBar(menubar);
         statusbar = new QStatusBar(ventanaImagenes);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -145,7 +149,7 @@ public:
         botonEjecutar->setText(QCoreApplication::translate("ventanaImagenes", "Ejecutar", nullptr));
         botonResetear->setText(QCoreApplication::translate("ventanaImagenes", "Resetear", nullptr));
         botonDirectorio->setText(QCoreApplication::translate("ventanaImagenes", "Seleccionar \n"
-" directorio", nullptr));
+" imagen", nullptr));
         botonVolver->setText(QCoreApplication::translate("ventanaImagenes", "Volver", nullptr));
         labelMedia->setText(QCoreApplication::translate("ventanaImagenes", "Media:", nullptr));
         labelTiempo2->setText(QCoreApplication::translate("ventanaImagenes", "Tiempo 2:", nullptr));
@@ -158,6 +162,8 @@ public:
         abrir->setText(QCoreApplication::translate("ventanaImagenes", "Abrir", nullptr));
         labelPic->setText(QString());
         labelImagen->setText(QString());
+        botonDirectorio_2->setText(QCoreApplication::translate("ventanaImagenes", "Seleccionar \n"
+" directorio", nullptr));
     } // retranslateUi
 
 };

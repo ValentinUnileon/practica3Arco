@@ -43,8 +43,8 @@ public:
     QPushButton *botonVolver;
     QLabel *labelTitulo;
     QFrame *linea1;
-    QLabel *resultado;
     QPushButton *botonDirectorio;
+    QPushButton *botonDirectorio_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -52,7 +52,7 @@ public:
     {
         if (ventanaOrdenacion->objectName().isEmpty())
             ventanaOrdenacion->setObjectName(QString::fromUtf8("ventanaOrdenacion"));
-        ventanaOrdenacion->resize(395, 500);
+        ventanaOrdenacion->resize(395, 486);
         centralwidget = new QWidget(ventanaOrdenacion);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         boxTiempo1 = new QTextBrowser(centralwidget);
@@ -99,7 +99,7 @@ public:
         botonResetear->setGeometry(QRect(120, 401, 111, 31));
         botonVolver = new QPushButton(centralwidget);
         botonVolver->setObjectName(QString::fromUtf8("botonVolver"));
-        botonVolver->setGeometry(QRect(260, 400, 111, 31));
+        botonVolver->setGeometry(QRect(270, 400, 111, 31));
         labelTitulo = new QLabel(centralwidget);
         labelTitulo->setObjectName(QString::fromUtf8("labelTitulo"));
         labelTitulo->setGeometry(QRect(40, 30, 331, 51));
@@ -111,16 +111,16 @@ public:
         linea1->setGeometry(QRect(40, 80, 211, 16));
         linea1->setFrameShape(QFrame::HLine);
         linea1->setFrameShadow(QFrame::Sunken);
-        resultado = new QLabel(centralwidget);
-        resultado->setObjectName(QString::fromUtf8("resultado"));
-        resultado->setGeometry(QRect(30, 440, 311, 31));
         botonDirectorio = new QPushButton(centralwidget);
         botonDirectorio->setObjectName(QString::fromUtf8("botonDirectorio"));
         botonDirectorio->setGeometry(QRect(270, 100, 111, 61));
+        botonDirectorio_2 = new QPushButton(centralwidget);
+        botonDirectorio_2->setObjectName(QString::fromUtf8("botonDirectorio_2"));
+        botonDirectorio_2->setGeometry(QRect(270, 190, 111, 61));
         ventanaOrdenacion->setCentralWidget(centralwidget);
         menubar = new QMenuBar(ventanaOrdenacion);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 395, 17));
+        menubar->setGeometry(QRect(0, 0, 395, 21));
         ventanaOrdenacion->setMenuBar(menubar);
         statusbar = new QStatusBar(ventanaOrdenacion);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -145,9 +145,10 @@ public:
         botonVolver->setText(QCoreApplication::translate("ventanaOrdenacion", "Volver", nullptr));
         labelTitulo->setText(QCoreApplication::translate("ventanaOrdenacion", "ALGORITMO 1: \n"
 "ORDENACION POR BURBUJA", nullptr));
-        resultado->setText(QCoreApplication::translate("ventanaOrdenacion", "TextLabel", nullptr));
-        botonDirectorio->setText(QCoreApplication::translate("ventanaOrdenacion", "Seleccionar \n"
-" directorio", nullptr));
+        botonDirectorio->setText(QCoreApplication::translate("ventanaOrdenacion", "Seleccion fichero \n"
+"de entrada", nullptr));
+        botonDirectorio_2->setText(QCoreApplication::translate("ventanaOrdenacion", "Seleccion directorio \n"
+"de salida", nullptr));
     } // retranslateUi
 
 };

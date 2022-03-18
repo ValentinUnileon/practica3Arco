@@ -24,9 +24,12 @@ private slots:
 
     void on_botonDirectorio_clicked();
 
+    void on_botonDirectorio_2_clicked();
+
 private:
     Ui::ventanaOrdenacion *ui;
-    QString direccionFichero;
+    QString direccionFicheroEntrada;
+    QString direccionFicheroSalida;
 };
 
 #endif // VENTANAORDENACION_H

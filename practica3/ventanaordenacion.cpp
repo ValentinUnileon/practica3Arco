@@ -10,6 +10,7 @@
 #include <fstream>
 #include <stdlib.h>
 
+
 #define length(x) (sizeof(x)/sizeof(x[0]))
 
 using namespace std;
@@ -38,123 +39,129 @@ void ventanaOrdenacion::on_botonVolver_clicked()
 
 void ventanaOrdenacion::on_botonEjecutar_clicked()
 {
-    int i,j,suma;
-    float total;
+    if(this->direccionFicheroEntrada=="" || this->direccionFicheroSalida==""){
 
-    //introducir datos
+        QMessageBox::information(this, tr("Error"), "Asegurate de seleccionar la direccion de entrada y salida");
 
-    ifstream archivo;
+    }else{
 
-    archivo.open(this->direccionFichero.toStdString(), ios::in);
+        int i;
+        float total;
 
-    int numero;
-    vector<int> numeros;
-    int is=0;
+        //introducir datos
 
-    while (archivo)
-    {
-        if (archivo >> numero){
-            numeros.push_back(numero);
-            cout << numeros[is];
-            is++;
+        ifstream archivo;
+
+        archivo.open(this->direccionFicheroEntrada.toStdString(), ios::in);
+
+        int numero;
+        vector<int> numeros;
+        vector<int> numerosFijos;
+
+        while (archivo)
+        {
+            if (archivo >> numero){
+                numeros.push_back(numero);
+                numerosFijos.push_back(numero);
+
+            }
         }
-    }
 
 
 
 
-    //INICIO DEL BUCLE DE EJECUCIONES
+        //INICIO DEL BUCLE DE EJECUCIONES
 
-    for (i = 0; i < 5; i++) {
+        for (i = 0; i < 5; i++) {
 
-        auto comienzo = std::chrono::high_resolution_clock::now();
+            auto comienzo = std::chrono::high_resolution_clock::now();
 
-        //-------------------------------------------------
+            //-------------------------------------------------
 
-        //int v[]={3, 34, 1, 53, 15, 6};  //ejemplo de numeros a ordenar
-        int auxiliar;
-
-
-        // Ordenación
-        for(int i=0; i<(int)length(numeros)-1; i++){
+            numeros = numerosFijos;
+            int auxiliar;
 
 
-            // Comparaciones
-            for(int j=0; j<((int)length(numeros)-1)-i; j++){
-            // Intercambiar los elementos
-            if(numeros[j] > numeros[j+1]){
-                auxiliar=numeros[j];
-                numeros[j]=numeros[j+1];
-                numeros[j+1]=auxiliar;
+            // Ordenación
+            for(int h=0; h<(int)numeros.size()-1; h++){
+
+
+                // Comparaciones
+                for(int k=0; k<((int)numeros.size()-1)-h; k++){
+                // Intercambiar los elementos
+                if(numeros[k] > numeros[k+1]){
+                    auxiliar=numeros[k];
+                    numeros[k]=numeros[k+1];
+                    numeros[k+1]=auxiliar;
+                    }
                 }
+
             }
 
+            //-------------------------------------------------
+
+
+            auto final = std::chrono::high_resolution_clock::now();
+            auto aux = std::chrono::duration_cast<std::chrono::nanoseconds>(final - comienzo);
+
+            auto duracion = aux*1e-9;
+
+            QString s = QString::number(duracion.count());
+            s.remove(5, 5);
+
+            s.append(" segundos");
+
+
+            if (i == 0) {
+
+                ui->boxTiempo1->setText(s);
+            } else if (i==1){
+
+                ui->boxTiempo2->setText(s);
+            } else if (i==2){
+
+                ui->boxTiempo3->setText(s);
+            } else if (i==3){
+
+                ui->boxTiempo4->setText(s);
+            } else {
+
+                ui->boxTiempo5->setText(s);
+            }
+
+            total = total + (float)duracion.count();
+
         }
 
-         QString resultado;
+        //Guardo los numeros ordenados en el fichero de salida
 
 
-        for(int i=0; i<(int)length(numeros); i++){
+        ofstream archivoSalida;
 
+        archivoSalida.open(this->direccionFicheroSalida.toStdString()+"/salidaNumeros.txt", ios::out);
 
-               resultado.append(QString::number(numeros[i]));
-               resultado.append(" ");
+        for(int i =0; i<(int)numeros.size(); i++){
 
+            string cadena;
+            archivoSalida << std::to_string(numeros[i]);
+            archivoSalida << " ";
 
         }
 
-        ui->resultado->setText(resultado);
+        archivoSalida.close();
 
 
+        //FIN DEL BUCLE DE EJECUCIONES
 
+        float media = total/5;
 
+        QString t = QString::number(media);
+        t.remove(5, 5);
+        t.append(" segundos");
 
-
-
-        //-------------------------------------------------
-
-
-        auto final = std::chrono::high_resolution_clock::now();
-        auto aux = std::chrono::duration_cast<std::chrono::nanoseconds>(final - comienzo);
-
-        auto duracion = aux*1e-9;
-
-        QString s = QString::number(duracion.count());
-        s.remove(5, 5);
-
-        s.append(" segundos");
-
-
-        if (i == 0) {
-
-            ui->boxTiempo1->setText(s);
-        } else if (i==1){
-
-            ui->boxTiempo2->setText(s);
-        } else if (i==2){
-
-            ui->boxTiempo3->setText(s);
-        } else if (i==3){
-
-            ui->boxTiempo4->setText(s);
-        } else {
-
-            ui->boxTiempo5->setText(s);
-        }
-
-        total = total + (float)duracion.count();
+        ui->boxMedia->setText(t);
 
     }
-
-    //FIN DEL BUCLE DE EJECUCIONES
-
-    float media = total/5;
-
-    QString t = QString::number(media);
-    t.remove(5, 5);
-    t.append(" segundos");
-
-    ui->boxMedia->setText(t);
 
 }
 
@@ -174,9 +181,18 @@ void ventanaOrdenacion::on_botonDirectorio_clicked()
 {
 
     QString homeDir=QDir::homePath ();
-    this->direccionFichero = QFileDialog::getOpenFileName(this, tr("Abrir archivo"), homeDir);
+    this->direccionFicheroEntrada = QFileDialog::getOpenFileName(this, tr("Seleccionar archivo"), homeDir);
 
-    QMessageBox::information(this, tr("Nombre"), direccionFichero);
+    QMessageBox::information(this, tr("Nombre"), direccionFicheroEntrada);
 
+}
+
+
+void ventanaOrdenacion::on_botonDirectorio_2_clicked()
+{
+    QString homeDir=QDir::homePath ();
+    this->direccionFicheroSalida = QFileDialog::getExistingDirectory(this, tr("Seleccionar dinerctorio"), homeDir);
+
+    QMessageBox::information(this, tr("Carpeta"), direccionFicheroSalida);
 }
 
