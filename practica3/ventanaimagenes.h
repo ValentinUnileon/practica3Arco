@@ -44,10 +44,14 @@ private slots:
     void on_botonResetear_clicked();
 
 
+    void on_botonDirectorio_clicked();
+
 private:
     QImage* _img;
 
     vector<int> Histogram(QImage* img);
+
+    QString direccionFichero;
 
     Ui::ventanaImagenes *ui;
 

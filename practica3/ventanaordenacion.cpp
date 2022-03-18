@@ -4,7 +4,15 @@
 #include <chrono>
 #include <string>
 #include <iostream>
+#include <QFileDialog>
+#include <QMessageBox>
+
+#include <fstream>
+#include <stdlib.h>
+
 #define length(x) (sizeof(x)/sizeof(x[0]))
+
+using namespace std;
 
 ventanaOrdenacion::ventanaOrdenacion(QWidget *parent) :
     QMainWindow(parent),
@@ -35,6 +43,25 @@ void ventanaOrdenacion::on_botonEjecutar_clicked()
 
     //introducir datos
 
+    ifstream archivo;
+
+    archivo.open(this->direccionFichero.toStdString(), ios::in);
+
+    int numero;
+    vector<int> numeros;
+    int is=0;
+
+    while (archivo)
+    {
+        if (archivo >> numero){
+            numeros.push_back(numero);
+            cout << numeros[is];
+            is++;
+        }
+    }
+
+
+
 
     //INICIO DEL BUCLE DE EJECUCIONES
 
@@ -44,21 +71,21 @@ void ventanaOrdenacion::on_botonEjecutar_clicked()
 
         //-------------------------------------------------
 
-        int v[]={3, 34, 1, 53, 15, 6};  //ejemplo de numeros a ordenar
+        //int v[]={3, 34, 1, 53, 15, 6};  //ejemplo de numeros a ordenar
         int auxiliar;
 
 
         // Ordenación
-        for(int i=0; i<(int)length(v)-1; i++){
+        for(int i=0; i<(int)length(numeros)-1; i++){
 
 
             // Comparaciones
-            for(int j=0; j<((int)length(v)-1)-i; j++){
+            for(int j=0; j<((int)length(numeros)-1)-i; j++){
             // Intercambiar los elementos
-            if(v[j] > v[j+1]){
-                auxiliar=v[j];
-                v[j]=v[j+1];
-                v[j+1]=auxiliar;
+            if(numeros[j] > numeros[j+1]){
+                auxiliar=numeros[j];
+                numeros[j]=numeros[j+1];
+                numeros[j+1]=auxiliar;
                 }
             }
 
@@ -67,10 +94,10 @@ void ventanaOrdenacion::on_botonEjecutar_clicked()
          QString resultado;
 
 
-        for(int i=0; i<(int)length(v); i++){
+        for(int i=0; i<(int)length(numeros); i++){
 
 
-               resultado.append(QString::number(v[i]));
+               resultado.append(QString::number(numeros[i]));
                resultado.append(" ");
 
 
@@ -140,5 +167,16 @@ void ventanaOrdenacion::on_botonResetear_clicked()
     ui->boxTiempo4->setText("");
     ui->boxTiempo5->setText("");
     ui->boxMedia->setText("");
+}
+
+
+void ventanaOrdenacion::on_botonDirectorio_clicked()
+{
+
+    QString homeDir=QDir::homePath ();
+    this->direccionFichero = QFileDialog::getOpenFileName(this, tr("Abrir archivo"), homeDir);
+
+    QMessageBox::information(this, tr("Nombre"), direccionFichero);
+
 }
 

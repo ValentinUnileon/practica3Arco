@@ -6,6 +6,7 @@
 //Imagenes
 #include <QImage>
 #include <QPixmap>
+#include <fstream>
 
 using namespace std;
 
@@ -120,4 +121,17 @@ void ventanaImagenes::on_botonResetear_clicked()
 }
 
 
+
+
+void ventanaImagenes::on_botonDirectorio_clicked()
+{
+
+    QString homeDir=QDir::homePath ();
+    this->direccionFichero = QFileDialog::getOpenFileName(this, tr("Abrir archivo"), homeDir);
+
+    std::ifstream fichero;
+
+    fichero.open("hello.txt");
+
+}
 
