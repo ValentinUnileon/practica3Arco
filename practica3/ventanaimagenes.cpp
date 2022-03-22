@@ -56,6 +56,19 @@ void ventanaImagenes::on_botonEjecutar_clicked()
 
         //-------------------------------------------------
 
+        QImage imagen;
+        imagen.load(direccionFicheroEntrada);
+
+        for(int i=0; i< imagen.width(); i++){
+            for(int j=0; j< imagen.height(); j++){
+                QRgb value=qRgb(imagen.pixelColor(i,j).blueF()+0.2126,imagen.pixelColor(i,j).redF()+0.7152,imagen.pixelColor(i,j).greenF()+0.0722);
+                imagen.setPixel(i, j, value);
+
+            }
+        }
+
+       // QString prueba = QFileDialog::getSaveFileName(this, tr("holi"), direccionFicheroSalida);
+        imagen.save(direccionFicheroSalida);
 
 
 
