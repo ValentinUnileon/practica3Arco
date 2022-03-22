@@ -44,9 +44,7 @@ public:
     QLabel *labelTiempo5;
     QLabel *labelTitulo;
     QFrame *linea1;
-    QPushButton *abrir;
     QLabel *labelPic;
-    QLabel *labelImagen;
     QPushButton *botonDirectorio_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -55,7 +53,7 @@ public:
     {
         if (ventanaImagenes->objectName().isEmpty())
             ventanaImagenes->setObjectName(QString::fromUtf8("ventanaImagenes"));
-        ventanaImagenes->resize(623, 478);
+        ventanaImagenes->resize(406, 478);
         centralwidget = new QWidget(ventanaImagenes);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         boxMedia = new QTextBrowser(centralwidget);
@@ -117,22 +115,16 @@ public:
         linea1->setGeometry(QRect(30, 80, 211, 16));
         linea1->setFrameShape(QFrame::HLine);
         linea1->setFrameShadow(QFrame::Sunken);
-        abrir = new QPushButton(centralwidget);
-        abrir->setObjectName(QString::fromUtf8("abrir"));
-        abrir->setGeometry(QRect(400, 140, 80, 18));
         labelPic = new QLabel(centralwidget);
         labelPic->setObjectName(QString::fromUtf8("labelPic"));
         labelPic->setGeometry(QRect(380, 210, 161, 151));
-        labelImagen = new QLabel(centralwidget);
-        labelImagen->setObjectName(QString::fromUtf8("labelImagen"));
-        labelImagen->setGeometry(QRect(370, 20, 161, 151));
         botonDirectorio_2 = new QPushButton(centralwidget);
         botonDirectorio_2->setObjectName(QString::fromUtf8("botonDirectorio_2"));
         botonDirectorio_2->setGeometry(QRect(250, 180, 111, 61));
         ventanaImagenes->setCentralWidget(centralwidget);
         menubar = new QMenuBar(ventanaImagenes);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 623, 21));
+        menubar->setGeometry(QRect(0, 0, 406, 21));
         ventanaImagenes->setMenuBar(menubar);
         statusbar = new QStatusBar(ventanaImagenes);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -159,9 +151,7 @@ public:
         labelTiempo5->setText(QCoreApplication::translate("ventanaImagenes", "Tiempo 5:", nullptr));
         labelTitulo->setText(QCoreApplication::translate("ventanaImagenes", "ALGORITMO 2: \n"
 "IMAGENES A BLANCO Y NEGRO", nullptr));
-        abrir->setText(QCoreApplication::translate("ventanaImagenes", "Abrir", nullptr));
         labelPic->setText(QString());
-        labelImagen->setText(QString());
         botonDirectorio_2->setText(QCoreApplication::translate("ventanaImagenes", "Seleccionar \n"
 " directorio", nullptr));
     } // retranslateUi

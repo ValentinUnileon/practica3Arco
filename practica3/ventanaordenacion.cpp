@@ -183,7 +183,9 @@ void ventanaOrdenacion::on_botonDirectorio_clicked()
     QString homeDir=QDir::homePath ();
     this->direccionFicheroEntrada = QFileDialog::getOpenFileName(this, tr("Seleccionar archivo"), homeDir);
 
-    QMessageBox::information(this, tr("Nombre"), direccionFicheroEntrada);
+    if(this->direccionFicheroEntrada!=""){
+       QMessageBox::information(this, tr("Nombre"), direccionFicheroEntrada);
+    }
 
 }
 
@@ -193,6 +195,8 @@ void ventanaOrdenacion::on_botonDirectorio_2_clicked()
     QString homeDir=QDir::homePath ();
     this->direccionFicheroSalida = QFileDialog::getExistingDirectory(this, tr("Seleccionar dinerctorio"), homeDir);
 
-    QMessageBox::information(this, tr("Carpeta"), direccionFicheroSalida);
+    if(this->direccionFicheroSalida!=""){
+        QMessageBox::information(this, tr("Carpeta"), direccionFicheroSalida);
+    }
 }
 

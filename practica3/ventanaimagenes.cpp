@@ -44,81 +44,91 @@ void ventanaImagenes::on_botonVolver_clicked()
 void ventanaImagenes::on_botonEjecutar_clicked()
 {
 
-    int i;
-    float total;
+    if(this->direccionFicheroEntrada=="" || this->direccionFicheroSalida==""){
+
+        QMessageBox::information(this, tr("Error"), "Asegurate de seleccionar la direccion de entrada y salida");
+
+    }else{
+
+        int i;
+        float total;
 
 
-    //INICIO DEL BUCLE DE EJECUCIONES
+        //INICIO DEL BUCLE DE EJECUCIONES
 
-    for (i = 0; i < 5; i++) {
+        for (i = 0; i < 5; i++) {
 
-        auto comienzo = std::chrono::high_resolution_clock::now();
+            auto comienzo = std::chrono::high_resolution_clock::now();
 
-        //-------------------------------------------------
+            //-------------------------------------------------
 
-        QImage imagen;
-        imagen.load(direccionFicheroEntrada);
+            QImage imagen;
+            imagen.load(this->direccionFicheroEntrada);
 
-        for(int i=0; i< imagen.width(); i++){
-            for(int j=0; j< imagen.height(); j++){
-                QRgb value=qRgb(imagen.pixelColor(i,j).blueF()+0.2126,imagen.pixelColor(i,j).redF()+0.7152,imagen.pixelColor(i,j).greenF()+0.0722);
-                imagen.setPixel(i, j, value);
 
+            for(int i=0; i< imagen.width(); i++){
+                for(int j=0; j< imagen.height(); j++){
+
+                    QRgb rgb = imagen.pixel(i, j);
+                    int r = qRed(rgb);
+                    int g = qGreen(rgb);
+                    int b = qBlue(rgb);
+                    int gray = (r + g + b) / 3;
+
+                    imagen.setPixel(i, j, qRgb(gray, gray, gray));
+
+                }
             }
+
+            imagen.save(this->direccionFicheroSalida+"/imagenSalida.jpg");
+
+
+            //-------------------------------------------------
+
+
+            auto final = std::chrono::high_resolution_clock::now();
+            auto aux = std::chrono::duration_cast<std::chrono::nanoseconds>(final - comienzo);
+
+            auto duracion = aux*1e-9;
+
+            QString s = QString::number(duracion.count());
+            s.remove(5, 5);
+
+            s.append(" segundos");
+
+
+            if (i == 0) {
+
+                ui->boxTiempo1->setText(s);
+            } else if (i==1){
+
+                ui->boxTiempo2->setText(s);
+            } else if (i==2){
+
+                ui->boxTiempo3->setText(s);
+            } else if (i==3){
+
+                ui->boxTiempo4->setText(s);
+            } else {
+
+                ui->boxTiempo5->setText(s);
+            }
+
+            total = total + (float)duracion.count();
+
         }
 
-       // QString prueba = QFileDialog::getSaveFileName(this, tr("holi"), direccionFicheroSalida);
-        imagen.save(direccionFicheroSalida);
+        //FIN DEL BUCLE DE EJECUCIONES
 
+        float media = total/5;
 
+        QString t = QString::number(media);
+        t.remove(5, 5);
+        t.append(" segundos");
 
+        ui->boxMedia->setText(t);
 
-        //-------------------------------------------------
-
-
-        auto final = std::chrono::high_resolution_clock::now();
-        auto aux = std::chrono::duration_cast<std::chrono::nanoseconds>(final - comienzo);
-
-        auto duracion = aux*1e-9;
-
-        QString s = QString::number(duracion.count());
-        s.remove(5, 5);
-
-        s.append(" segundos");
-
-
-        if (i == 0) {
-
-            ui->boxTiempo1->setText(s);
-        } else if (i==1){
-
-            ui->boxTiempo2->setText(s);
-        } else if (i==2){
-
-            ui->boxTiempo3->setText(s);
-        } else if (i==3){
-
-            ui->boxTiempo4->setText(s);
-        } else {
-
-            ui->boxTiempo5->setText(s);
         }
-
-        total = total + (float)duracion.count();
-
-    }
-
-    //FIN DEL BUCLE DE EJECUCIONES
-
-    float media = total/5;
-
-    QString t = QString::number(media);
-    t.remove(5, 5);
-    t.append(" segundos");
-
-    ui->boxMedia->setText(t);
-
-
 
 }
 
@@ -142,7 +152,10 @@ void ventanaImagenes::on_botonDirectorio_clicked()
     QString homeDir=QDir::homePath ();
     this->direccionFicheroEntrada = QFileDialog::getOpenFileName(this, tr("Seleccionar archivo"), homeDir);
 
-    QMessageBox::information(this, tr("Nombre"), direccionFicheroEntrada);
+    if(this->direccionFicheroEntrada!=""){
+       QMessageBox::information(this, tr("Nombre"), direccionFicheroEntrada);
+    }
+
 
 }
 
@@ -152,6 +165,9 @@ void ventanaImagenes::on_botonDirectorio_2_clicked()
     QString homeDir=QDir::homePath ();
     this->direccionFicheroSalida = QFileDialog::getExistingDirectory(this, tr("Seleccionar dinerctorio"), homeDir);
 
-    QMessageBox::information(this, tr("Carpeta"), direccionFicheroSalida);
+    if(this->direccionFicheroSalida!=""){
+        QMessageBox::information(this, tr("Carpeta"), direccionFicheroSalida);
+    }
+
 }
 

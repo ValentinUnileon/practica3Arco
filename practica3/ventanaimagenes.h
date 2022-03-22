@@ -49,19 +49,13 @@ private slots:
     void on_botonDirectorio_2_clicked();
 
 private:
-    QImage* _img;
-
-    vector<int> Histogram(QImage* img);
 
     QString direccionFicheroEntrada;
     QString direccionFicheroSalida;
 
     Ui::ventanaImagenes *ui;
 
-    //Guardar ruta
-QString runPath;
-QString hglpName;
-QString hglpPath;
+
 };
 
 #endif // VENTANAIMAGENES_H

@@ -40,13 +40,13 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         botonOrdenacion = new QPushButton(centralwidget);
         botonOrdenacion->setObjectName(QString::fromUtf8("botonOrdenacion"));
-        botonOrdenacion->setGeometry(QRect(60, 40, 151, 51));
+        botonOrdenacion->setGeometry(QRect(90, 80, 151, 51));
         botonImagen = new QPushButton(centralwidget);
         botonImagen->setObjectName(QString::fromUtf8("botonImagen"));
-        botonImagen->setGeometry(QRect(280, 40, 151, 51));
+        botonImagen->setGeometry(QRect(280, 80, 151, 51));
         label1 = new QLabel(centralwidget);
         label1->setObjectName(QString::fromUtf8("label1"));
-        label1->setGeometry(QRect(140, 100, 211, 20));
+        label1->setGeometry(QRect(160, 30, 211, 20));
         QFont font;
         font.setPointSize(12);
         label1->setFont(font);
@@ -56,7 +56,7 @@ public:
         menu->setCentralWidget(centralwidget);
         menubar = new QMenuBar(menu);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 502, 22));
+        menubar->setGeometry(QRect(0, 0, 502, 21));
         menu->setMenuBar(menubar);
         statusbar = new QStatusBar(menu);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
