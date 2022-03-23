@@ -2,10 +2,12 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
+INCLUDEPATH += $$PWD
+
 CONFIG += c++11
 
 # You can make your code fail to compile if it uses deprecated APIs.
-# In order to do so, uncomment the following line.
+# In order to do so, uncomment the following$$ line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
@@ -24,11 +26,6 @@ FORMS += \
     ventanaimagenes.ui \
     ventanaordenacion.ui
 
-
-INCLUDEPATH += "C:\opencv\build\include"
-LIBS += -L"C:\opencv\build\x64\vc12\lib" \
-    -lopencv_ts300 \
-    -lopencv_world300 \
 
 
 

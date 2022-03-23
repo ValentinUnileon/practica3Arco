@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>395</width>
-    <height>486</height>
+    <width>400</width>
+    <height>560</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>100</y>
+      <y>233</y>
       <width>131</width>
       <height>31</height>
      </rect>
@@ -28,7 +28,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>107</y>
+      <y>240</y>
       <width>61</width>
       <height>16</height>
      </rect>
@@ -41,7 +41,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>147</y>
+      <y>280</y>
       <width>61</width>
       <height>16</height>
      </rect>
@@ -54,7 +54,7 @@
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>140</y>
+      <y>273</y>
       <width>131</width>
       <height>31</height>
      </rect>
@@ -64,7 +64,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>187</y>
+      <y>320</y>
       <width>61</width>
       <height>16</height>
      </rect>
@@ -77,7 +77,7 @@
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>180</y>
+      <y>313</y>
       <width>131</width>
       <height>31</height>
      </rect>
@@ -87,7 +87,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>227</y>
+      <y>360</y>
       <width>61</width>
       <height>16</height>
      </rect>
@@ -100,7 +100,7 @@
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>220</y>
+      <y>353</y>
       <width>131</width>
       <height>31</height>
      </rect>
@@ -110,7 +110,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>267</y>
+      <y>400</y>
       <width>61</width>
       <height>16</height>
      </rect>
@@ -123,7 +123,7 @@
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>260</y>
+      <y>440</y>
       <width>131</width>
       <height>31</height>
      </rect>
@@ -132,8 +132,8 @@
    <widget class="QPushButton" name="botonEjecutar">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>307</y>
+      <x>40</x>
+      <y>170</y>
       <width>111</width>
       <height>31</height>
      </rect>
@@ -146,7 +146,7 @@
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>354</y>
+      <y>400</y>
       <width>131</width>
       <height>31</height>
      </rect>
@@ -156,20 +156,20 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>360</y>
+      <y>450</y>
       <width>61</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Media:</string>
+     <string>MEDIA:</string>
     </property>
    </widget>
    <widget class="QPushButton" name="botonResetear">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>401</y>
+      <x>20</x>
+      <y>490</y>
       <width>111</width>
       <height>31</height>
      </rect>
@@ -181,8 +181,8 @@
    <widget class="QPushButton" name="botonVolver">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>400</y>
+      <x>190</x>
+      <y>490</y>
       <width>111</width>
       <height>31</height>
      </rect>
@@ -206,16 +206,15 @@
      </font>
     </property>
     <property name="text">
-     <string>ALGORITMO 1: 
-ORDENACION POR BURBUJA</string>
+     <string>ORDENACION POR BURBUJA</string>
     </property>
    </widget>
    <widget class="Line" name="linea1">
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>80</y>
-      <width>211</width>
+      <y>70</y>
+      <width>221</width>
       <height>16</height>
      </rect>
     </property>
@@ -226,8 +225,8 @@ ORDENACION POR BURBUJA</string>
    <widget class="QPushButton" name="botonDirectorio">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>100</y>
+      <x>40</x>
+      <y>90</y>
       <width>111</width>
       <height>61</height>
      </rect>
@@ -240,8 +239,8 @@ de entrada</string>
    <widget class="QPushButton" name="botonDirectorio_2">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>190</y>
+      <x>220</x>
+      <y>90</y>
       <width>111</width>
       <height>61</height>
      </rect>
@@ -257,8 +256,8 @@ de salida</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>395</width>
-     <height>21</height>
+     <width>400</width>
+     <height>17</height>
     </rect>
    </property>
   </widget>
